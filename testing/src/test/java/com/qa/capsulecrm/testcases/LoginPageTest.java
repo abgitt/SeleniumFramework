@@ -39,12 +39,12 @@ public class LoginPageTest
 		Assert.assertEquals(loginPage.getLoginlbl(), "Log In");
 		BasePage.extentTest.log(Status.PASS,"Lable found with text :: "+ loginPage.getLoginlbl());
 	}
-	@Test(description="To Validate login functionality working properly or not")
+	@Test(description="To Validate login functionality working properly or not",dependsOnMethods="validateLoginPageTest")
 	public void validateLoginFunctionalityTest()
 	{
 		BasePage.extentTest.log(Status.INFO,"Validating login functionality by performing login " );
 		loginPage.loginToApp(prop.getProperty("username"), prop.getProperty("password"));
-		BasePage.extentTest.log(Status.PASS,"Lable found with text :: "+ loginPage.getLoginlbl());
+		BasePage.extentTest.log(Status.PASS,"user logged in successfully");
 	}
 	
 	@AfterMethod
