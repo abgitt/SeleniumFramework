@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Hub Spot Test Suite" verbose="1">
+	<listeners>
+	<listener class-name="com.qa.capsulecrm.listeners.ExtentReportListener" />
+	</listeners>
+	<test name="hub spot Regression Test">
+		<classes>
+			<class name="com.qa.capsulecrm.testcases.LoginPageTest" >
+			<methods>
+			<exclude name="validateLoginPageTest" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
