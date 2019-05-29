@@ -39,18 +39,19 @@ public class LoginPage extends BasePage
 	
 	public String getLoginlbl()
 	{
+		new WebDriverWait(dr,30).until(ExpectedConditions.visibilityOf(loginlbl));
 		return loginlbl.getText();
 	}
 	
 	public HomePage loginToApp(String uname,String pwd)
 	{
-		//new WebDriverWait(dr,30).until(ExpectedConditions.visibilityOfElementLocated((By) usernametb));
+		new WebDriverWait(dr,30).until(ExpectedConditions.visibilityOf( usernametb));
 		usernametb.clear();
 		usernametb.sendKeys(uname);
-		//new WebDriverWait(dr,30).until(ExpectedConditions.visibilityOfElementLocated((By) pwdtb));
+		new WebDriverWait(dr,30).until(ExpectedConditions.visibilityOf(pwdtb));
 		pwdtb.clear();
 		pwdtb.sendKeys(pwd);
-		//new WebDriverWait(dr,30).until(ExpectedConditions.visibilityOfElementLocated((By) loginbtn));
+		new WebDriverWait(dr,30).until(ExpectedConditions.visibilityOf(loginbtn));
 		loginbtn.click();
 		return new HomePage();
 	}
